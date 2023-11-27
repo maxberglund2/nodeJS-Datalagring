@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <form action="#" style="display: flex; flex-direction: column; width: 400px;">
+        <input type="text" name="username_input" id="username_input" placeholder="username">
+        <input type="date" name="date_input" id="date_input" placeholder="date">
+        <input type="file" name="file_input" id="file_input">
+        <input type="text" name="job_input" id="job_input" placeholder="job">
+        <button type="button" onclick="sendData()">Submit</button>
+    </form>
+    <script>
+        const sendData = () => {
+            const username = document.getElementById('username_input').value;
+            const birthday = document.getElementById('date_input').value;
+            const image = document.getElementById('file_input').value;
+            const job = document.getElementById('job_input').value;
+
+            console.log(image)
+
+/*              fetch('/addUser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, birthday, image, job }),
+            })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                }); */
+        };
+    </script>
+</body>
+</html>
