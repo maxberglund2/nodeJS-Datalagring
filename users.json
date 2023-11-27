@@ -1,8 +1,18 @@
 [
   {
-    "username": "Max",
-    "birthday": "2004-03-15",
-    "image": "e6c6fe0f7e207061afc28f11a4a67f77",
+    "firstname": "Max",
+    "lastname": "Berglund",
+    "username": "Greed",
+    "birthday": "2023-11-15",
+    "image": "6bcdf548044d7714193cd27d8c85cc9d",
+    "profession": "Student"
+  },
+  {
+    "firstname": "David",
+    "lastname": "Nazari",
+    "username": "kingdawoo",
+    "birthday": "2023-11-08",
+    "image": "a9977b94236ca379dc5a8439d012978e",
     "profession": "Student"
   }
 ]

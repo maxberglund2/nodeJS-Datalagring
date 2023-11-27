@@ -26,7 +26,7 @@ console.log(users);
 
 app.use(express.static(__dirname));
 
-app.get('/', (req, res) => {
+app.get('/index.html', (req, res) => {
     res.sendFile(__dirname + '/html/index.html');
 });
 app.get('/create.html', (req, res) => {
@@ -42,18 +42,20 @@ app.get('/read.html', (req, res) => {
 app.use(express.json()); // Parse JSON bodies
 
 app.post('/createUser', upload.single('image'), (req, res) => {
-  const { username, birthday, profession } = req.body;
+  const { firstname, lastname, username, birthday, profession } = req.body;
   const image = req.file ? req.file.filename : '';
 
 
-  addUser(username, birthday, image, profession);
+  addUser(firstname, lastname, username, birthday, image, profession);
   res.redirect('/read.html');
 });
 
-const addUser = (username, birthday, image, profession) => {
+const addUser = (firstname, lastname, username, birthday, image, profession) => {
 try {
 
   const newUser = {
+    "firstname": firstname,
+    "lastname": lastname,
     "username": username,
     "birthday": birthday,
     "image": image,
@@ -71,6 +73,9 @@ try {
   console.error('Error:', err);
 }};
 
+app.get('/displayUsers',(req,res)=>{
+  res.json(users);
+ });
 
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);

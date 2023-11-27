@@ -7,38 +7,13 @@
 </head>
 <body>
     <form action="/createUser" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; width: 400px;">
+        <input type="text" name="firstname" id="firstname" placeholder="Firstname">
+        <input type="text" name="lastname" id="lastname" placeholder="Lastname">
         <input type="text" name="username" id="username_input" placeholder="Username">
         <input type="date" name="birthday" id="date_input" placeholder="Birthday">
         <input type="file" name="image" id="file_input" accept=".jpg, .jpeg, .png">
         <input type="text" name="profession" id="profession_input" placeholder="Profession">
         <input type="submit" value="Submit">
-        
-        <!-- <button type="button" onclick="sendData()">Submit</button> -->
     </form>
-<!--     <script>
-        const sendData = () => {
-            const username = document.getElementById('username_input').value;
-            const birthday = document.getElementById('date_input').value;
-            const image = document.getElementById('file_input').value;
-            const job = document.getElementById('job_input').value;
-
-            console.log(image)
-
-              fetch('/addUser', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, birthday, image, job }),
-            })
-                .then(response => response.text())
-                .then(data => {
-                    alert(data);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        };
-    </script> -->
 </body>
 </html>
