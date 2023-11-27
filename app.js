@@ -25,15 +25,15 @@ console.log(users);
 app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/html/home.html');
+    res.sendFile(__dirname + '/html/index.html');
 });
-app.get('/add.html', (req, res) => {
+app.get('/create.html', (req, res) => {
   res.sendFile(__dirname + '/html/add.html');
 });
-app.get('/edit.html', (req, res) => {
+app.get('/update.html', (req, res) => {
   res.sendFile(__dirname + '/html/edit.html');
 });
-app.get('/list.html', (req, res) => {
+app.get('/read.html', (req, res) => {
   res.sendFile(__dirname + '/html/list.html');
 });
 
