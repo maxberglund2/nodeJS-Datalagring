@@ -1,25 +1,8 @@
 [
   {
-    "username": "max",
-    "birthday": "2023-11-08",
+    "username": "Max",
+    "birthday": "2004-03-15",
     "image": "e6c6fe0f7e207061afc28f11a4a67f77",
-    "profession": "Student"
-  },
-  {
-    "username": "max",
-    "birthday": "2023-11-15",
-    "profession": "Student"
-  },
-  {
-    "username": "max",
-    "birthday": "2023-11-15",
-    "image": "5f346506b8929f6b920f083d89ddb40d",
-    "profession": "Student"
-  },
-  {
-    "username": "max2",
-    "birthday": "2023-11-15",
-    "image": "e365a1d798e5947d8a5ae3fe473bbd71",
     "profession": "Student"
   }
 ]

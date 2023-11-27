@@ -71,7 +71,6 @@ try {
   console.error('Error:', err);
 }};
 
-//addUser("User1", "2023.11.27", "./img/photo1.jpg", "professionless");
 
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
