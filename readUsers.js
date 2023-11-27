@@ -19,7 +19,7 @@ const displayUsers = (users) => {
 
 
         userDiv.id = `user_${index}`;
-        userDiv.classList.add('card');
+        userDiv.classList.add('card', 'm-2', 'border-secondary');
         userDiv.style.width = '18rem';
         image.src = './img/' + user.image;
         image.alt = 'User Image';
