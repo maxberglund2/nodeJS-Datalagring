@@ -1,11 +1,13 @@
-
-  
 //fs.writeFileSync('users.json', JSON.stringify(user),{flag:'a+'});
 const express = require('express');
-const fs = require('fs');
-const jsonPath = 'users.json';
 const app = express();
 const port = 3000;
+
+const fs = require('fs');
+const jsonPath = 'users.json';
+
+const multer = require('multer');
+const upload = multer({ dest: 'img/' });
 
 // check if json exists
 try {
@@ -28,31 +30,34 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/html/index.html');
 });
 app.get('/create.html', (req, res) => {
-  res.sendFile(__dirname + '/html/add.html');
+  res.sendFile(__dirname + '/html/create.html');
 });
 app.get('/update.html', (req, res) => {
-  res.sendFile(__dirname + '/html/edit.html');
+  res.sendFile(__dirname + '/html/update.html');
 });
 app.get('/read.html', (req, res) => {
-  res.sendFile(__dirname + '/html/list.html');
+  res.sendFile(__dirname + '/html/read.html');
 });
 
 app.use(express.json()); // Parse JSON bodies
 
-app.post('/addUser', (req, res) => {
-  const { username, birthday, image, job } = req.body;
-  addUser(username, birthday, image, job);
-  res.send('User added successfully!');
+app.post('/createUser', upload.single('image'), (req, res) => {
+  const { username, birthday, profession } = req.body;
+  const image = req.file ? req.file.filename : '';
+
+
+  addUser(username, birthday, image, profession);
+  res.redirect('/read.html');
 });
 
-const addUser = (username, birthday, image, job) => {
+const addUser = (username, birthday, image, profession) => {
 try {
 
   const newUser = {
     "username": username,
     "birthday": birthday,
     "image": image,
-    "job": job
+    "profession": profession
   };
 
   users.push(newUser);
@@ -66,7 +71,7 @@ try {
   console.error('Error:', err);
 }};
 
-//addUser("User1", "2023.11.27", "./img/photo1.jpg", "jobless");
+//addUser("User1", "2023.11.27", "./img/photo1.jpg", "professionless");
 
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);

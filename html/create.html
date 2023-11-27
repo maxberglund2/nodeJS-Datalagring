@@ -6,14 +6,16 @@
     <title>Create User</title>
 </head>
 <body>
-    <form action="#" style="display: flex; flex-direction: column; width: 400px;">
-        <input type="text" name="username_input" id="username_input" placeholder="username">
-        <input type="date" name="date_input" id="date_input" placeholder="date">
-        <input type="file" name="file_input" id="file_input">
-        <input type="text" name="job_input" id="job_input" placeholder="job">
-        <button type="button" onclick="sendData()">Submit</button>
+    <form action="/createUser" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; width: 400px;">
+        <input type="text" name="username" id="username_input" placeholder="Username">
+        <input type="date" name="birthday" id="date_input" placeholder="Birthday">
+        <input type="file" name="image" id="file_input" accept=".jpg, .jpeg, .png">
+        <input type="text" name="profession" id="profession_input" placeholder="Profession">
+        <input type="submit" value="Submit">
+        
+        <!-- <button type="button" onclick="sendData()">Submit</button> -->
     </form>
-    <script>
+<!--     <script>
         const sendData = () => {
             const username = document.getElementById('username_input').value;
             const birthday = document.getElementById('date_input').value;
@@ -37,6 +39,6 @@
                     console.error('Error:', error);
                 });
         };
-    </script>
+    </script> -->
 </body>
 </html>
