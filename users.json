@@ -14,5 +14,13 @@
     "birthday": "2023-11-08",
     "image": "a9977b94236ca379dc5a8439d012978e",
     "profession": "Student"
+  },
+  {
+    "firstname": "Alex",
+    "lastname": "Soto",
+    "username": "Alexo",
+    "birthday": "2023-11-23",
+    "image": "16ea80f0aadb4253976735b5bedbad05",
+    "profession": "Student"
   }
 ]

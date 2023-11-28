@@ -15,7 +15,7 @@ const displayUsers = (users) => {
         const image = document.createElement('img');
         const userInfo = document.createElement('div');
         const usernamePara = document.createElement('p');
-        const birthdayPara = document.createElement('p');
+        const professionPara = document.createElement('p');
 
 
         userDiv.id = `user_${index}`;
@@ -26,14 +26,14 @@ const displayUsers = (users) => {
 
         userInfo.classList.add('card-body');
         usernamePara.classList.add('card-text');
-        birthdayPara.classList.add('card-text');
+        professionPara.classList.add('card-text');
 
-        usernamePara.textContent = `Username: ${user.username}`;
-        birthdayPara.textContent = `Birthday: ${user.birthday}`;
+        usernamePara.textContent = `${user.username}`;
+        professionPara.textContent = `${user.profession}`;
 
   
         userInfo.appendChild(usernamePara);
-        userInfo.appendChild(birthdayPara);
+        userInfo.appendChild(professionPara);
 
         userDiv.appendChild(image);
         userDiv.appendChild(userInfo);
@@ -43,7 +43,7 @@ const displayUsers = (users) => {
 
         const targetId = document.getElementById(`user_${index}`);
         targetId.addEventListener("click", (event) => {
-          location.href=`http://localhost:3000/edit/user_${index}`;
+          location.href=`http://localhost:3000/edit?user=${index}`;
         });
 
     });
