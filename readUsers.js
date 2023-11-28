@@ -19,7 +19,7 @@ const displayUsers = (users) => {
 
 
         userDiv.id = `user_${index}`;
-        userDiv.classList.add('card', 'm-2', 'border-secondary');
+        userDiv.classList.add('card', 'm-1', 'mt-4', 'border-secondary');
         userDiv.style.width = '18rem';
         image.src = './img/' + user.image;
         image.alt = 'User Image';
@@ -40,5 +40,11 @@ const displayUsers = (users) => {
 
 
         usersContainer.appendChild(userDiv);
+
+        const targetId = document.getElementById(`user_${index}`);
+        targetId.addEventListener("click", (event) => {
+          location.href=`http://localhost:3000/edit/user_${index}`;
+        });
+
     });
 };
