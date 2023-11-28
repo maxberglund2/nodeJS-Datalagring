@@ -23,6 +23,7 @@ const displayUsers = (users) => {
         userDiv.style.width = '18rem';
         image.src = './img/' + user.image;
         image.alt = 'User Image';
+        image.style = "min-height: 288px;";
 
         userInfo.classList.add('card-body');
         usernamePara.classList.add('card-text');
